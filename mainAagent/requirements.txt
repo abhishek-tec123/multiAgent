@@ -1,0 +1,34 @@
+langchain
+langchain-community
+langchain-groq
+langchain-huggingface
+tiktoken
+beautifulsoup4
+lxml
+scikit-learn
+pandas
+faiss-cpu
+
+
+# {
+#   "mcpServers": {
+#     "filesystem": {
+#       "command": "npx",
+#       "args": [
+#         "-y",
+#         "@modelcontextprotocol/server-filesystem",
+#         "/Users/macbook/Desktop",
+#         "/Users/macbook/Desktop/MCP_S"
+#       ]
+#     },
+#     "weather": {
+#       "command": "/Users/macbook/Desktop/MCP_S/.enviromentmcpsrvr/bin/uv",
+#       "args": [
+#         "--directory",
+#         "/Users/macbook/Desktop/MCP_S/weather",
+#         "run",
+#         "weather.py"
+#       ]
+#     }
+#   }
+# }

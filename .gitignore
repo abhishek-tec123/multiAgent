@@ -1,0 +1,72 @@
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.code-workspace
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+.python-version
+.Python
+
+# Packaging / build
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+.wheels/
+
+# Test / coverage / type checking
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.pytype/
+.ruff_cache/
+
+# Jupyter / cache
+.ipynb_checkpoints/
+.cache/
+
+# Logs
+*.log
+logs/
+app.log
+mainAagent/AllinOne/output_log.txt
+
+# Credentials / local configs
+*.env
+.env
+.env.*
+*.local
+.multiAgentEnv
+
+# --- Project specific binaries / indices ---
+# FAISS indices and pickles
+app/faiss_index/
+mainAagent/AllinOne/vector_index/
+
+# Redis dump
+dump.rdb
+
+# Generated API clients / keys
+gen-lang-client-*.json
+
+# Optional: large data files (uncomment to ignore local datasets)
+data/**
+data/*.pdf
+data/*.xlsx
+data/*.csv
+data/*.parquet
