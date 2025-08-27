@@ -193,3 +193,6 @@ async def run_agent(agent_id: str, request: AgentRequest):
         "agent": agent_id,
         "context": context_to_dict(context),
     }
+
+
+#     # "sms": lambda: SmsAgent(SmsService(dev_mode=True)),
