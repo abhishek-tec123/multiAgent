@@ -117,6 +117,7 @@ from app.services.llm import LlmService
 from app.agents.summary_agent import SummaryAgent
 from app.agents.sms_agent import SmsAgent
 from app.services.sms import SmsService
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.agents.google_sheet_doc_agents import GoogleSheetsAgent, GoogleDocsAgent
 
@@ -124,6 +125,13 @@ retriever_service = RetrieverService()
 
 app = FastAPI(title="Email Agent API", version="1.0")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 👈 Allow all origins (set specific domains in prod)
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
 @app.on_event("startup")
 async def startup_event():
     msg = retriever_service.ensure_index()
