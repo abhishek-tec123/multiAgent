@@ -57,7 +57,7 @@ mainAagent/AllinOne/output_log.txt
 # FAISS indices and pickles
 app/faiss_index/
 mainAagent/AllinOne/vector_index/
-
+Vector_Store
 # Redis dump
 dump.rdb
 

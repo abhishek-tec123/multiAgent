@@ -5,7 +5,7 @@ from dataclasses import is_dataclass, asdict
 
 from app.core.types import PipelineContext
 from app.core.config import RETRIEVER_FILE_PATH
-from app.services.vector_store import RetrieverService
+from app.services.reterever import RetrieverService
 from app.services.llm import LlmService
 from app.services.sms import SmsService
 from app.services.email import EmailService

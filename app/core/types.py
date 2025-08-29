@@ -26,5 +26,6 @@ class PipelineContext:
     to_email: Optional[str] = None    # Add this
     email_status: Optional[str] = None
     sms_status: Optional[str] = None
+    url: Optional[str] = None
     trace: List[dict] = field(default_factory=list)
     meta: Dict[str, object] = field(default_factory=dict)

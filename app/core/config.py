@@ -8,8 +8,10 @@ MODEL_NAME = os.getenv("MODEL_NAME", "llama-3.3-70b-versatile")
 # Email/SMTP
 SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.gmail.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
-SENDER_EMAIL = os.getenv("SENDER_EMAIL", "sender@example.com")
-SENDER_PASSWORD = os.getenv("SENDER_PASSWORD", "your-app-password")
+SENDER_EMAIL = os.getenv("SENDER_EMAIL", "kumartinkesh32@gmail.com")
+SENDER_PASSWORD = os.getenv("SENDER_PASSWORD", "tinKesh.32")
+# SENDER_PASSWORD = os.getenv("SENDER_PASSWORD", "hvkd erin hczm khxy")
+
 RECEIVER_EMAIL = os.getenv("RECEIVER_EMAIL", "receiver@example.com")
 
 # Paths
@@ -17,13 +19,13 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))  #
 
 FAISS_INDEX_PATH = os.getenv(
     "FAISS_INDEX_PATH",
-    os.path.join(PROJECT_ROOT, "faiss_index"),  # ✅ updated
+    os.path.join(PROJECT_ROOT, "Vector_Store"),  # ✅ updated
 )
 
-RETRIEVER_FILE_PATH = os.getenv(
-    "RETRIEVER_FILE_PATH",
-    os.path.join(PROJECT_ROOT, "api.txt"),  # ✅ updated
-)
+# RETRIEVER_FILE_PATH = os.getenv(
+#     "RETRIEVER_FILE_PATH",
+#     os.path.join(PROJECT_ROOT, "api.txt"),  # ✅ updated
+# )
 
 # Misc
 os.environ["TOKENIZERS_PARALLELISM"] = "false"

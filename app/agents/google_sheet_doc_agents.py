@@ -91,6 +91,7 @@
 from app.agents.base import BaseAgent
 from app.core.types import PipelineContext
 from app.services.GoogleShyAndDoc import GoogleSheetsHandler, GoogleDocsHandler
+from app.core.summary_fun import summarize_extracted_text
 
 # JSON_KEY_FILE is optional now
 JSON_KEY_FILE = None  # or set your file path if you want auth enabled by default
@@ -113,8 +114,12 @@ class GoogleSheetsAgent(BaseAgent):
             if not data:
                 context.response = "⚠️ No data found in sheet"
             else:
-                lines = [" | ".join(f"{k}: {v}" for k, v in row.items()) for row in data]
-                context.response = "\n".join(lines)
+                # Convert rows into text for summarization
+                extracted_text = "\n".join(
+                    " | ".join(f"{k}: {v}" for k, v in row.items()) for row in data
+                )
+                summary = await summarize_extracted_text(extracted_text)
+                context.response = summary
 
             return await self.update_trace(context, "GoogleSheetsAgent", "completed")
 
@@ -143,9 +148,13 @@ class GoogleDocsAgent(BaseAgent):
             content = docs.read()
 
             if isinstance(content, list):
-                context.response = "\n".join(content)
+                extracted_text = "\n".join(content)
             else:
-                context.response = str(content)
+                extracted_text = str(content)
+
+            # Summarize the extracted text
+            summary = await summarize_extracted_text(extracted_text)
+            context.response = summary
 
             return await self.update_trace(context, "GoogleDocsAgent", "completed")
 
